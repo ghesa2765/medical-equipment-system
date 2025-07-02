@@ -1,0 +1,243 @@
+/* ไฟล์: src/components/layout/Navbar.module.css */
+
+.navbar {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: slideDown 0.3s ease-out;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+/* Logo Section */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.logoSubtitle {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Menu Section */
+.menuSection {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+  justify-content: center;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.menuItem:hover {
+  background: #f0f0f0;
+  color: #4caf50;
+}
+
+.menuIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* User Section */
+.userSection {
+  display: flex;
+  align-items: center;
+}
+
+.userMenu {
+  position: relative;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.userInfo:hover {
+  background: #f0f0f0;
+}
+
+.userName {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+}
+
+.userRole {
+  font-size: 13px;
+  color: #666;
+}
+
+/* User Dropdown */
+.userDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+}
+
+.userMenu:hover .userDropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  color: #333;
+  text-decoration: none;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background: #f0f0f0;
+  color: #4caf50;
+}
+
+.dropdownItem:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.dropdownItem:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.dropdownIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Auth Buttons */
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loginButton {
+  padding: 8px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #4caf50;
+  border: 2px solid #4caf50;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.loginButton:hover {
+  background: #4caf50;
+  color: white;
+}
+
+.registerButton {
+  padding: 8px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  background: #4caf50;
+  color: white;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.registerButton:hover {
+  background: #45a049;
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .logoSubtitle {
+    display: none;
+  }
+  
+  .menuSection {
+    display: none;
+  }
+  
+  .authButtons {
+    gap: 5px;
+  }
+  
+  .loginButton,
+  .registerButton {
+    padding: 6px 15px;
+    font-size: 14px;
+  }
+}
